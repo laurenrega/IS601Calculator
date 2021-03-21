@@ -21,9 +21,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_subtract_method_calculator(self):
         test_data = CsvReader('/src/UnitTestSubtraction.csv').data
-        pprint(test_data)
-        self.assertEqual(self.calculator.subtract(2, 2), 0)
-        self.assertEqual(self.calculator.result, 0)
+        for row in test_data:
+            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
 
 
 
