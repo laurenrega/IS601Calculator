@@ -22,6 +22,10 @@ def square(a):
     a = float(a)
     return a**2
 
+def squareroot(a):
+    a = float(a)
+    return round((a**.5), 4)
+
 class Calculator:
     result = 0
 
@@ -46,4 +50,8 @@ class Calculator:
 
     def sqrd(self, a):
         self.result = square(a)
+        return self.result
+
+    def sqrt(self, a):
+        self.result = squareroot(a)
         return self.result
