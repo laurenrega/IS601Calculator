@@ -38,7 +38,11 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.divide(row['Value 1'], row['Value 2']), float(row['Result']))
             self.assertEqual(self.calculator.result, float(row['Result']))
 
-
+    def test_sqrd_method_calculator(self):
+        test_data = CsvReader('/src/UnitTestSquare.csv').data
+        for row in test_data:
+            self.assertEqual(self.calculator.sqrd(row['Value 1']), float(row['Result']))
+            self.assertEqual(self.calculator.result, float(row['Result']))
 
 
 if __name__ == "__main__":
